@@ -1,0 +1,197 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url(https://fonts.googleapis.com/css?family=Lato:300,700);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.clearfix {
+  clear: both; }
+
+.cal-social {
+  text-decoration: none;
+  color: inherit; }
+  .cal-social span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    padding: 5px; }
+    .cal-social span i {
+      font-size: 16px;
+      line-height: 20px; }
+    .cal-social span.rounded {
+      border-radius: 4px; }
+    .cal-social span.round {
+      border-radius: 100%; }
+    .cal-social span.facebook {
+      background-color: #3b5998; }
+      .cal-social span.facebook i {
+        color: white; }
+    .cal-social span.facebook-invert {
+      background-color: white; }
+      .cal-social span.facebook-invert i {
+        color: #3b5998; }
+    .cal-social span.twitter {
+      background-color: #00aced; }
+      .cal-social span.twitter i {
+        color: white; }
+    .cal-social span.twitter-invert {
+      background-color: white; }
+      .cal-social span.twitter-invert i {
+        color: #00aced; }
+
+body {
+  background-color: #e3e3e3;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 16px; }
+
+h1, h2, h3, h4, h5, h6, b, strong {
+  font-weight: 700; }
+
+h1 {
+  font-size: 1.8em;
+  margin: 10px 0 20px; }
+
+h2 {
+  font-size: 1.4em;
+  margin: 10px 0 20px; }
+
+h3 {
+  font-size: 1.2em;
+  margin: 20px 0 0; }
+
+section > h3 {
+  margin: 0; }
+
+h3 + p {
+  margin-top: 20px; }
+
+p + p {
+  margin-top: 20px; }
+
+h4, h5, h6 {
+  font-size: 1.1em;
+  margin: 10px 0 10px; }
+
+hr {
+  margin: 20px 0 40px;
+  border: none;
+  border-bottom: 1px solid #e3e3e3; }
+
+p.bad, p.warning, p.good {
+  position: relative;
+  padding: 10px;
+  border-left: 30px solid; }
+  p.bad:before, p.warning:before, p.good:before {
+    font-family: FontAwesome;
+    position: absolute;
+    color: #FFF;
+    font-size: 25px; }
+
+p.bad {
+  border-color: #F44336; }
+  p.bad:before {
+    content: "\f00d";
+    left: -24px; }
+
+p.warning {
+  border-color: #FF9800; }
+  p.warning:before {
+    content: "\f12a";
+    left: -19px; }
+
+p.good {
+  border-color: #4CAF50; }
+  p.good:before {
+    content: "\f00c";
+    left: -26px; }
+
+span.code {
+  font-family: monospace; }
+  span.code.facebook {
+    color: #3b5998; }
+    span.code.facebook i {
+      margin-right: 4px; }
+
+section {
+  margin-top: 50px;
+  border-top: 1px solid #ccc;
+  padding-top: 50px; }
+
+.example {
+  clear: both;
+  padding: 20px 0 0 0; }
+  .example .white-bg {
+    float: left;
+    padding: 20px; }
+  .example .dark-bg {
+    background-color: #666;
+    float: left;
+    padding: 20px; }
+  .example .light-bg {
+    background-color: #ddd;
+    float: left;
+    padding: 20px; }
+  .example .code-snippet {
+    float: left;
+    width: 510px;
+    padding: 10px 20px;
+    font-family: monospace;
+    font-size: 12px;
+    color: grey; }
+    .example .code-snippet.longer {
+      width: 650px; }
+    .example .code-snippet p {
+      white-space: pre; }
+
+.container {
+  width: 760px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
+
+/*# sourceMappingURL=main.css.map */

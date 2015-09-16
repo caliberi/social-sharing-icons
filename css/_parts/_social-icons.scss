@@ -1,0 +1,83 @@
+.cal-social {
+  text-decoration: none;
+  color: inherit;
+
+  span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    padding: 5px;
+
+    i {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+
+
+    &.rounded {
+      border-radius: 4px;
+    }
+
+
+    &.round {
+      border-radius: 100%;
+    }
+
+
+
+
+    // Facebook
+
+    &.facebook {
+      background-color: $facebook;
+
+      i {
+        color: white;
+      }
+    }
+
+
+    &.facebook-invert {
+      background-color: white;
+
+      i {
+        color: $facebook;
+      }
+    }
+
+
+
+
+    // Facebook
+
+    &.twitter {
+      background-color: $twitter;
+
+      i {
+        color: white;
+      }
+    }
+
+
+    &.twitter-invert {
+      background-color: white;
+
+      i {
+        color: $twitter;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+  }
+
+}

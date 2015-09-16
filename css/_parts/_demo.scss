@@ -1,0 +1,173 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,700);
+
+
+// material colours
+$green: #4CAF50;
+$red: #F44336;
+$orange: #FF9800;
+
+
+body{
+  background-color: #e3e3e3;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+h1,h2,h3,h4,h5,h6,b,strong {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 1.8em;
+  margin: 10px 0 20px;
+}
+
+h2 {
+  font-size: 1.4em;
+  margin: 10px 0 20px;
+
+}
+
+h3 {
+  font-size: 1.2em;
+  margin: 20px 0 0;
+}
+
+section > h3 {
+  margin: 0;
+}
+
+h3 + p {
+  margin-top: 20px;
+}
+
+p + p {
+  margin-top: 20px;
+}
+
+h4, h5, h6 {
+  font-size: 1.1em;
+  margin: 10px 0 10px;
+}
+
+hr {
+  margin: 20px 0 40px;
+  border: none;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+p.bad, p.warning, p.good {
+  position: relative;
+  padding: 10px;
+  border-left:30px solid;
+
+  &:before {
+    font-family: FontAwesome;
+    position: absolute;
+    color: #FFF;
+    font-size: 25px;
+  }
+}
+
+
+p.bad {
+  border-color: $red;
+
+  &:before {
+    content: "\f00d";
+    left: -24px;
+  }
+}
+
+
+p.warning {
+  border-color: $orange;
+
+  &:before {
+    content: "\f12a";
+    left: -19px;
+  }
+}
+
+p.good {
+  border-color: $green;
+
+  &:before {
+    content: "\f00c";
+    left: -26px;
+  }
+}
+
+span.code {
+  font-family: monospace;
+
+  &.facebook {
+    color: $facebook;
+
+    i {
+      margin-right:4px;
+    }
+  }
+
+}
+
+section {
+  margin-top: 50px;
+  border-top: 1px solid #ccc;
+
+  padding-top: 50px;
+}
+
+.example {
+  clear: both;
+  padding:20px 0 0 0;
+
+  .white-bg {
+    float: left;
+    padding: 20px;
+  }
+
+  .dark-bg {
+    background-color: #666;
+    float: left;
+    padding: 20px;
+  }
+
+  .light-bg {
+    background-color: #ddd;
+    float: left;
+    padding: 20px;
+  }
+
+  .code-snippet {
+    float: left;
+    width: 510px;
+    padding: 10px 20px;
+    font-family: monospace;
+    font-size: 12px;
+    color: grey;
+
+
+    &.longer {
+      width: 650px;
+    }
+
+    p {
+      white-space: pre;
+    }
+
+
+  }
+
+}
+
+
+
+.container {
+  width:760px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}

@@ -1,0 +1,1 @@
+This folder is for storing your includes, file snippets or partials
