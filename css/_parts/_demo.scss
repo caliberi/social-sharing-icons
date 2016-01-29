@@ -38,7 +38,7 @@ section > h3 {
   margin: 0;
 }
 
-h3 + p {
+h3 + p, p + h3 {
   margin-top: 20px;
 }
 
@@ -99,15 +99,78 @@ p.good {
   }
 }
 
+p.cols {
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
+  text-align: center;
+}
+
+ol {
+  margin-left: 30px;
+  li {
+    ol {
+      list-style-type: lower-latin;
+    }
+  }
+}
+
+
+
+
 span.code {
   font-family: monospace;
 
   &.facebook {
     color: $facebook;
+  }
 
-    i {
-      margin-right:4px;
-    }
+  &.twitter {
+    color: $twitter;
+  }
+
+  &.google-plus {
+    color: $google-plus;
+  }
+
+  &.pinterest {
+    color: $pinterest;
+  }
+
+  &.linkedin {
+    color: $linkedin;
+  }
+
+  &.youtube {
+    color: $youtube;
+  }
+
+  &.vimeo {
+    color: $vimeo;
+  }
+
+  &.whatsapp {
+    color: $whatsapp;
+  }
+
+  &.tumblr {
+    color: $tumblr;
+  }
+
+  &.instagram {
+    color: $instagram;
+  }
+
+  &.flickr {
+    color: $flickr;
+  }
+
+  &.soundcloud {
+    color: $soundcloud;
+  }
+
+  i {
+    margin-right:4px;
   }
 
 }
@@ -142,19 +205,19 @@ section {
 
   .code-snippet {
     float: left;
-    width: 510px;
-    padding: 10px 20px;
+    width: 600px;
+    padding: 0 20px;
     font-family: monospace;
     font-size: 12px;
     color: grey;
 
 
     &.longer {
-      width: 650px;
+      width: 740px;
     }
 
     p {
-      white-space: pre;
+      white-space: pre-wrap;
     }
 
 
@@ -165,7 +228,7 @@ section {
 
 
 .container {
-  width:760px;
+  width:850px;
   margin: 40px auto;
   padding: 20px;
   background: white;

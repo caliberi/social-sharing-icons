@@ -1,12 +1,13 @@
-<? include 'init.php'; ?>
+<? include 'init.php';
+
+$networks = array('facebook','twitter','google-plus','pinterest','linkedin','youtube','vimeo','whatsapp','tumblr','instagram','flickr','soundcloud');
+
+?>
 
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/Article">
     <head>
         <meta charset="utf-8">
-
-
-
 
         <title></title>
         <meta name="description" content="">
@@ -47,211 +48,416 @@
     </head>
     <body>
 
+	<? Social_Buttons::facebook_sdk(FB_APP_ID) ?>
+
 
 	<main class="container">
 
 		<h1>Social Sharing Template</h1>
 
-
 		<h2>Contents</h2>
-		<ol>
+		<ol class="contents">
 			<li><a href="#usage">Using in your app</a></li>
-			<li>
-				<a href="#buttons">Buttons</a>
+			<li><a href="#colours">Colours</a></li>
+			<li><a href="#options">Options</a>
 				<ol>
-					<li><a href="#facebook">Facebook</a></li>
-					<li><a href="#twitter">Twitter</a></li>
+					<li><a href="#networks">Networks</a></li>
+					<li><a href="#button-styles">Button Styles</a></li>
+					<li><a href="#link-types">Link Types</a></li>
+					<li><a href="#new-window">Open in New Window</a></li>
+					<li><a href="#data-attributes">Data Attributes</a></li>
 				</ol>
 			</li>
+			<li><a href="#version-control">Version Control</a></li>
+
 		</ol>
 
-		<section class="facebook">
+		<section class="usage">
+		<h2>Usage in your app</h2><a name="usage"></a>
 
-			<h2>Usage in your app</h2><a name="usage"></a>
-			<p>Usage to do</p>
+			<p>Firstly this requires you to be using SASS in your apps. The SCSS files are to be added as partials to your main scss file</p>
 
+			<p>Secondly, make sure you include FontAwesome in your project. <a href="https://fortawesome.github.io/Font-Awesome/get-started/">Install here</a></p>
+
+			<h3>Required files from this project</h3>
+			<p><span class="code">/classes/Social_Buttons.class.php</span> - also remember to require it in your project.</p>
+			<p><span class="code">css/_parts/_social-colours.scss</span> - Add this to your SASS partials folder and <span class="code">@import</span> the link to the file</p>
+			<p><span class="code">css/_parts/_social-icons.scss</span> - Add this to your SASS partials folder and <span class="code">@import</span> the link to the file</p>
+			<p><span class="code">scripts/social-icons.js</span> - Add this to your JavaScript folder and include on any pages that the buttons are being included on</p>
 		</section>
 
 
-
-		<section class="facebook">
-			<h2>Buttons</h2><a name="buttons"></a>
+		<a name="notes"></a>
+		<section class="notes">
+			<h2>Notes</h2>
 			<p class="warning">All examples below show what the icons will look like on white, light and dark backgrounds. The code <strong>will not</strong> add the grey boxes.</p>
+
+			<p class="warning">Only Facebook, Twitter, Google Plus, Pinterest and LinkedIn have a native share as well as the option to link to the site. </p>
 		</section>
 
 
-		
-		<section class="facebook">
+		<a name="colours"></a>
+		<section class="colours">
+			<h2>Social Media Colours</h2>
+			<p>The template has popular networks default colouring colouring built in. Just include the colour variables below in your SCSS to use it.</p>
+			<p class="cols">
+				<span class="code facebook"><i class="fa fa-square"></i>$facebook</span><br>
+				<span class="code twitter"><i class="fa fa-square"></i>$twitter</span><br>
+				<span class="code google-plus"><i class="fa fa-square"></i>$google-plus</span><br>
+				<span class="code pinterest"><i class="fa fa-square"></i>$pinterest</span><br>
+				<span class="code linkedin"><i class="fa fa-square"></i>$linkedin</span><br>
+				<span class="code youtube"><i class="fa fa-square"></i>$youtube</span><br>
+				<span class="code vimeo"><i class="fa fa-square"></i>$vimeo</span><br>
+				<span class="code whatsapp"><i class="fa fa-square"></i>$whatsapp</span><br>
+				<span class="code tumblr"><i class="fa fa-square"></i>$tumblr</span><br>
+				<span class="code instagram"><i class="fa fa-square"></i>$instagram</span><br>
+				<span class="code flickr"><i class="fa fa-square"></i>$flickr</span><br>
+				<span class="code soundcloud"><i class="fa fa-square"></i>$soundcloud</span>
+			</p>
+		</section>
+
+
+		<a name="options"></a>
+		<section class="options">
 			
-			<h3>Facebook</h3><a name="facebook"></a>
-			<p>The template has Facebook colouring built in. Just include the colour <span class="code facebook"><i class="fa fa-square"></i>$facebook</span> in your SCSS to use it.</p>
-
-			<h4>Facebook styles</h4>
+			<h2>Options</h2><a name="options"></a>
 
 
-			<div class="example">
+			<a name="networks"></a>
+			<article class="network">
+
+
+				<h3>Supported Networks</h3>
+				<p>Use the network key to output which network you require a button form. Below is a list of everything supported</p>
+
+				<? foreach($networks as $network): ?>
+
+					<div class="example">
+
+						<div class="white-bg">
+
+							<?
+							$args = array('network' => $network);
+
+							Social_Buttons::build($args); ?>
+
+						</div>
+
+						<div class="light-bg">
+
+							<?
+							$args = array('network' => $network);
+
+							Social_Buttons::build($args); ?>
+
+						</div>
+
+						<div class="dark-bg">
+
+							<?
+							$args = array('network' => $network);
+
+							Social_Buttons::build($args); ?>
+
+						</div>
+
+						<div class="code-snippet">
+
+<pre><code>$args = array('network' => '<?=$network?>');
+
+Social_Buttons::build($args);</code></pre>
+
+						</div>
+
+						<div class="clearfix"></div>
+
+					</div>
+
+				<? endforeach; ?>
+
+			</article>
+
+
+			<a name="button-styles"></a>
+			<article class="button-styles">
+
+				<h3>Button styles</h3>
+				<p>Default styling of the button is square.</p>
+
+				<div class="example">
+
+					<div class="white-bg">
+
+						<?
+						$args = array('network' => 'facebook');
+
+						Social_Buttons::build($args); ?>
+
+					</div>
+
+					<div class="light-bg">
+
+						<?
+						$args = array('network' => 'facebook');
+
+						Social_Buttons::build($args); ?>
+
+					</div>
+
+					<div class="dark-bg">
+
+						<?
+						$args = array('network' => 'facebook');
+
+						Social_Buttons::build($args); ?>
+
+					</div>
+
+					<div class="code-snippet">
+
+						<pre><code>$args = array(
+	'network' => 'facebook'
+);
+
+Social_Buttons::build();</code></pre>
+
+					</div>
+
+					<div class="clearfix"></div>
+
+				</div>
+
+				<div class="example">
+
+					<div class="white-bg">
+
+						<?
+						$args = array('network' => 'pinterest',
+						              'style' => 'rounded');
+
+						Social_Buttons::build($args);
+						?>
+
+					</div>
+
+					<div class="light-bg">
+
+						<?
+						$args = array('network' => 'pinterest',
+						              'style' => 'rounded');
+
+						Social_Buttons::build($args);
+						?>
+
+					</div>
+
+					<div class="dark-bg">
+
+						<?
+						$args = array('network' => 'pinterest',
+						              'style' => 'rounded');
+
+						Social_Buttons::build($args);
+						?>
+
+					</div>
+
+					<div class="code-snippet">
+
+<pre><code>$args = array(
+	'network' => 'pinterest',
+	'style' => 'rounded'
+);
+Social_Buttons::build($args);</code></pre>
+
+					</div>
+
+					<div class="clearfix"></div>
+
+				</div>
+
+				<div class="example">
+
+					<div class="white-bg">
+
+						<?
+						$args = array('network' => 'whatsapp',
+						              'style' => 'round');
+
+						Social_Buttons::build($args);
+						?>
+
+					</div>
+
+					<div class="light-bg">
+
+						<?
+						$args = array('network' => 'whatsapp',
+						              'style' => 'round');
+
+						Social_Buttons::build($args);
+						?>
+
+					</div>
+
+					<div class="dark-bg">
+
+						<?
+						$args = array('network' => 'whatsapp',
+						              'style' => 'round');
+
+						Social_Buttons::build($args);
+						?>
+
+					</div>
+
+					<div class="code-snippet">
+
+<pre><code>$args = array(
+	'network' => 'whatsapp',
+	'style' => 'round'
+);
+Social_Buttons::build($args);</code></pre>
+
+					</div>
+
+					<div class="clearfix"></div>
+
+				</div>
+
+				<div class="example">
+
+					<div class="white-bg">
+
+						<?
+						$args = array('network' => 'linkedin',
+						              'invert' => true);
+
+						Social_Buttons::build($args);
+						?>
+
+					</div>
+
+					<div class="light-bg">
+
+						<?
+						$args = array('network' => 'linkedin',
+						              'invert' => true);
+
+						Social_Buttons::build($args);
+						?>
+
+					</div>
+
+					<div class="dark-bg">
+
+						<?
+						$args = array('network' => 'linkedin',
+						              'invert' => true);
+
+						Social_Buttons::build($args);
+						?>
+
+					</div>
+
+					<div class="code-snippet">
+
+<pre><code>$args = array(
+	'network' => 'facebook',
+	'invert' => true
+);
+Social_Buttons::build($args);</code></pre>
+
+					</div>
+
+					<div class="clearfix"></div>
+
+				</div>
+
+				<div class="example">
+
+					<div class="white-bg">
+
+						<?
+						$args = array('network' => 'youtube',
+						              'style' => 'rounded',
+						              'invert' => true);
+
+						Social_Buttons::build($args);
+						?>
+
+					</div>
+
+					<div class="light-bg">
+
+						<?
+						$args = array('network' => 'youtube',
+						              'style' => 'rounded',
+						              'invert' => true);
+
+						Social_Buttons::build($args);
+						?>
+
+					</div>
+
+					<div class="dark-bg">
+
+						<?
+						$args = array('network' => 'youtube',
+						              'style' => 'rounded',
+						              'invert' => true);
+
+						Social_Buttons::build($args);
+						?>
+
+					</div>
+
+					<div class="code-snippet">
+
+<pre><code>$args = array(
+	'network' => 'youtube',
+	'style' => 'rounded',
+	'invert' => true
+);
+Social_Buttons::build($args);</code></pre>
+
+					</div>
+
+					<div class="clearfix"></div>
+
+				</div>
+
+				<div class="example">
 
 				<div class="white-bg">
 
 					<?
-					$args = array('network' => 'facebook');
+					$args = array('network' => 'google-plus',
+					              'style' => 'round',
+					              'invert' => true);
 
-					Social_Buttons::build($args); ?>
+					Social_Buttons::build($args);
+					?>
 
 				</div>
 
 				<div class="light-bg">
 
 					<?
-					$args = array('network' => 'facebook');
+					$args = array('network' => 'google-plus',
+					              'style' => 'round',
+					              'invert' => true);
 
-					Social_Buttons::build($args); ?>
+					Social_Buttons::build($args);
+					?>
 
 				</div>
 
 				<div class="dark-bg">
 
 					<?
-					$args = array('network' => 'facebook');
-
-					Social_Buttons::build($args); ?>
-
-				</div>
-
-				<div class="code-snippet">
-
-<p>$args = array('network' => 'facebook');
-
-Social_Buttons::build();</p>
-
-				</div>
-
-				<div class="clearfix"></div>
-
-			</div>
-
-			<div class="example">
-
-				<div class="white-bg">
-
-					<?
-					$args = array('network' => 'facebook',
-					              'rounded' => true);
-
-					Social_Buttons::build($args);
-					?>
-
-				</div>
-
-				<div class="light-bg">
-
-					<?
-					$args = array('network' => 'facebook',
-					              'rounded' => true);
-
-					Social_Buttons::build($args);
-					?>
-
-				</div>
-
-				<div class="dark-bg">
-
-					<?
-					$args = array('network' => 'facebook',
-					              'rounded' => true);
-
-					Social_Buttons::build($args);
-					?>
-
-				</div>
-
-				<div class="code-snippet">
-
-<p>$args = array('network' => 'facebook',
-              'rounded' => true);
-Social_Buttons::build($args);</p>
-
-				</div>
-
-				<div class="clearfix"></div>
-
-			</div>
-
-			<div class="example">
-
-				<div class="white-bg">
-
-					<?
-					$args = array('network' => 'facebook',
-					              'round' => true);
-
-					Social_Buttons::build($args);
-					?>
-
-				</div>
-
-				<div class="light-bg">
-
-					<?
-					$args = array('network' => 'facebook',
-					              'round' => true);
-
-					Social_Buttons::build($args);
-					?>
-
-				</div>
-
-				<div class="dark-bg">
-
-					<?
-					$args = array('network' => 'facebook',
-					              'round' => true);
-
-					Social_Buttons::build($args);
-					?>
-
-				</div>
-
-				<div class="code-snippet">
-
-<p>$args = array('network' => 'facebook',
-              'round' => true);
-Social_Buttons::build($args);</p>
-
-				</div>
-
-				<div class="clearfix"></div>
-
-			</div>
-
-			<div class="example">
-
-				<div class="white-bg">
-
-					<?
-					$args = array('network' => 'facebook',
-					              'invert' => true);
-
-					Social_Buttons::build($args);
-					?>
-
-				</div>
-
-				<div class="light-bg">
-
-					<?
-					$args = array('network' => 'facebook',
-					              'invert' => true);
-
-					Social_Buttons::build($args);
-					?>
-
-				</div>
-
-				<div class="dark-bg">
-
-					<?
-					$args = array('network' => 'facebook',
+					$args = array('network' => 'google-plus',
+					              'style' => 'round',
 					              'invert' => true);
 
 					Social_Buttons::build($args);
@@ -261,9 +467,12 @@ Social_Buttons::build($args);</p>
 
 				<div class="code-snippet">
 
-<p>$args = array('network' => 'facebook',
-              'invert' => true);
-Social_Buttons::build($args);</p>
+<pre><code>$args = array(
+	'network' => 'google-plus',
+	'style' => 'round',
+	'invert' => true
+);
+Social_Buttons::build($args);</pre>
 
 				</div>
 
@@ -271,171 +480,227 @@ Social_Buttons::build($args);</p>
 
 			</div>
 
-			<div class="example">
+			</article>
 
-				<div class="white-bg">
 
-					<?
-					$args = array('network' => 'facebook',
-					              'rounded' => true, 
-					              'invert' => true);
+			<a name="link-types"></a>
+			<article class="link-types">
 
-					Social_Buttons::build($args);
-					?>
+
+				<h3>Facebook Button Options</h3>
+
+				<p>There are a couple of options for Facebook. The first option is a standard link to out to a Facebook page</p>
+
+				<div class="example">
+
+					<div class="light-bg">
+
+						<?
+						$args = array('network' => 'facebook',
+						              'link' => 'http://www.facebook.com/caliberi');
+
+						Social_Buttons::build($args); ?>
+
+					</div>
+
+					<div class="code-snippet longer">
+
+<pre><code>$args = array(
+	'network' => 'facebook',
+	'link' => 'http://www.facebook.com/caliberi'
+);
+Social_Buttons::build($args);</code></pre>
+
+					</div>
+
+					<div class="clearfix"></div>
+
+				</div>
+				<br>
+
+				<p>If you are using the 'link' item, you can force it to open in a new window by adding the add the below</p>
+				<a name="new-window"></a>
+
+				<div class="example">
+
+					<div class="light-bg">
+
+						<?
+						$args = array('network' => 'facebook',
+						              'link' => 'http://www.facebook.com/caliberi',
+						              'new-window' => true);
+
+						Social_Buttons::build($args); ?>
+
+					</div>
+
+					<div class="code-snippet longer">
+
+<pre><code>$args = array(
+	'network' => 'facebook',
+	'link' => 'http://www.facebook.com/caliberi',
+	'new-window' => true
+);
+Social_Buttons::build($args);</code></pre>
+
+					</div>
+
+					<div class="clearfix"></div>
+
+				</div>
+				<br>
+
+				<p>If you want a user to share a page and it use that pages Open Graph meta data to populate the share dialog add the below</p>
+
+				<div class="example">
+
+					<div class="light-bg">
+
+						<?
+						$args = array(	'network' => 'facebook',
+						                'link' => 'share',
+										'url' => 'http://www.caliberi.com');
+
+						Social_Buttons::build($args); ?>
+
+					</div>
+
+					<div class="code-snippet longer">
+
+<pre><code>$args = array(
+	'network' => 'facebook',
+	'link' => 'share',
+	'url' => 'http://www.caliberi.com'
+);
+Social_Buttons::build($args);</code></pre>
+
+					</div>
+
+					<div class="clearfix"></div>
+
+				</div>
+				<br>
+
+				<p>If you want a user create a customised share widget that overrides the Open Graph data to populate the share dialog add the below. You'll need to make sure that the Facebook SDK is loaded in with this one as well as teh correct APP ID for this application</p>
+
+				<div class="example">
+
+					<div class="light-bg">
+
+						<?
+						$args = array(	'network' => 'facebook',
+						                'link' => 'custom-share',
+										'title' => 'This is the Title',
+										'caption' => 'The Caption',
+										'description' => 'This is the description.',
+										'url' => 'http://www.caliberi.com',
+										'image_url' => 'http://www.caliberi.com/wp-content/uploads/2014/04/separator2saving2.jpg ');
+
+						Social_Buttons::build($args); ?>
+
+					</div>
+
+					<div class="code-snippet longer">
+
+<pre><code>$args = array(
+	'network' => 'facebook',
+	'link' => 'custom-share',
+	'title' => 'This is the Title',
+	'caption' => 'The Caption',
+	'description' => 'This is the description.',
+	'url' => 'http://www.caliberi.com',
+	'image_url' => 'http://www.caliberi.com/wp-content/uploads/2014/04/separator2saving2.jpg '
+);
+Social_Buttons::build($args);</code></pre>
+
+					</div>
+
+					<div class="clearfix"></div>
 
 				</div>
 
-				<div class="light-bg">
-
-					<?
-					$args = array('network' => 'facebook',
-					              'rounded' => true, 
-					              'invert' => true);
-
-					Social_Buttons::build($args);
-					?>
-
-				</div>
-
-				<div class="dark-bg">
-
-					<?
-					$args = array('network' => 'facebook',
-					              'rounded' => true, 
-					              'invert' => true);
-
-					Social_Buttons::build($args);
-					?>
-
-				</div>
-
-				<div class="code-snippet">
-
-<p>$args = array('network' => 'facebook',
-              'rounded' => true,
-              'invert' => true);
-Social_Buttons::build($args);</p>
-
-				</div>
-
-				<div class="clearfix"></div>
-
-			</div>
+			</article>
 
 
-			<div class="example">
+			<a name="data-attributes"></a>
+			<article class="data-attributes">
 
-				<div class="white-bg">
+				<h3>HTML5 Data attritutes</h3>
 
-					<?
-					$args = array('network' => 'facebook',
-					              'round' => true,
-					              'invert' => true);
+				<p>If there is a requirement to pass a custom data attributes in the format data-* do so as shown below. To see these examples working view the source of the buttons below.</p>
 
-					Social_Buttons::build($args);
-					?>
+				<div class="example">
+
+					<div class="light-bg">
+
+						<?
+						$args = array('network' => 'google-plus',
+						              'link' => 'https://plus.google.com/+Caliberi/posts',
+						              'data-id' => '12345');
+
+						Social_Buttons::build($args); ?>
+
+					</div>
+
+					<div class="code-snippet longer">
+
+<pre><code>$args =array(
+	'network' => 'google-plus',
+	'link' => 'https://plus.google.com/+Caliberi/posts',
+	'data-id' => '12345'
+);
+Social_Buttons::build($args);</code></pre>
+
+					</div>
+
+					<div class="clearfix"></div>
 
 				</div>
 
-				<div class="light-bg">
+				<p><br>Passing multiple data attributes? Just keep adding them to the <span class="code">$args</span></p>
 
-					<?
-					$args = array('network' => 'facebook',
-					              'round' => true,
-					              'invert' => true);
+				<div class="example">
 
-					Social_Buttons::build($args);
-					?>
+					<div class="light-bg">
 
-				</div>
+						<?
+						$args = array('network' => 'pinterest',
+						              'link' => 'http://www.pinterest.com/somepage',
+						              'data-id' => '12345',
+						              'data-somethingelse' => 'another value');
 
-				<div class="dark-bg">
+						Social_Buttons::build($args); ?>
 
-					<?
-					$args = array('network' => 'facebook',
-					              'round' => true,
-					              'invert' => true);
+					</div>
 
-					Social_Buttons::build($args);
-					?>
+					<div class="code-snippet longer">
 
-				</div>
+<pre><code>$args = array(
+	'network' => 'pinterest',
+	'link' => 'http://www.pinterest.com/somepage',
+	'data-id' => '12345',
+	'data-somethingelse' => 'another value'
+);
+Social_Buttons::build($args);</code></pre>
 
-				<div class="code-snippet">
+					</div>
 
-<p>$args = array('network' => 'facebook',
-              'round' => true,
-              'invert' => true);
-Social_Buttons::build($args);</p>
-
-				</div>
-
-				<div class="clearfix"></div>
-
-			</div>
-
-
-			<h4 >Facebook Link types</h4>
-
-			<p>If you don't add in the link to the array the button will automatically share the page using social meta data.</p>
-			<p>The top demo will be a normal share and the bottom share will be a link.</p>
-
-
-			<div class="example">
-
-				<div class="light-bg">
-
-					<?
-					$args = array('network' => 'facebook',
-					              'link' => 'http://www.facebook.com/caliberi');
-
-					Social_Buttons::build($args); ?>
+					<div class="clearfix"></div>
 
 				</div>
 
-				<div class="code-snippet longer">
 
-<p>$args(array('network' => 'facebook');
-
-Social_Buttons::build($args);</p>
-
-				</div>
-
-				<div class="clearfix"></div>
-
-			</div>
-
-			<div class="example">
-
-				<div class="light-bg">
-
-					<?
-					$args = array('network' => 'facebook',
-					              'link' => 'http://www.facebook.com/caliberi');
-
-					Social_Buttons::build($args); ?>
-
-				</div>
-
-				<div class="code-snippet longer">
-
-<p>$args(array('network' => 'facebook',
-            'link' => 'http://www.facebook.com/caliberi'));
-
-Social_Buttons::build($args);</p>
-
-				</div>
-
-				<div class="clearfix"></div>
-
-			</div>
-
+			</article>
 		</section>
 
+		<a name="version-control"></a>
+		<section class="version-control">
+			<h2>Version Control</h2>
+			<p>Currently the app is located in bitbucket at <span class="code">https://bitbucket.org/caliberi/social-sharing-template</span></p>
 
-		
-		
-		
+			<p>Eventually we could open source this and push it out via the Caliber github account.</p>
+		</section>
+
 
 	</main>
 
@@ -443,6 +708,10 @@ Social_Buttons::build($args);</p>
 
     <script src="scripts/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
     <script src="scripts/main.js"></script>
+    <script src="scripts/social-buttons.js"></script>
     </body>
 </html>

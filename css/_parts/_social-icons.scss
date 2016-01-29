@@ -28,16 +28,13 @@
 
 
 
-    // Facebook
 
     &.facebook {
       background-color: $facebook;
-
       i {
         color: white;
       }
     }
-
 
     &.facebook-invert {
       background-color: white;
@@ -48,18 +45,12 @@
     }
 
 
-
-
-    // Facebook
-
     &.twitter {
       background-color: $twitter;
-
       i {
         color: white;
       }
     }
-
 
     &.twitter-invert {
       background-color: white;
@@ -70,6 +61,164 @@
     }
 
 
+    &.google-plus {
+      background-color: $google-plus;
+      i {
+        color: white;
+      }
+    }
+
+    &.google-plus-invert {
+      background-color: white;
+
+      i {
+        color: $google-plus;
+      }
+    }
+
+
+    &.pinterest {
+      background-color: $pinterest;
+      i {
+        color: white;
+      }
+    }
+
+    &.pinterest-invert {
+      background-color: white;
+
+      i {
+        color: $pinterest;
+      }
+    }
+
+
+    &.linkedin {
+      background-color: $linkedin;
+      i {
+        color: white;
+      }
+    }
+
+    &.linkedin-invert {
+      background-color: white;
+
+      i {
+        color: $linkedin;
+      }
+    }
+
+
+    &.youtube {
+      background-color: $youtube;
+      i {
+        color: white;
+      }
+    }
+
+    &.youtube-invert {
+      background-color: white;
+
+      i {
+        color: $youtube;
+      }
+    }
+
+
+    &.vimeo {
+      background-color: $vimeo;
+      i {
+        color: white;
+      }
+    }
+
+    &.vimeo-invert {
+      background-color: white;
+
+      i {
+        color: $vimeo;
+      }
+    }
+
+
+    &.whatsapp {
+      background-color: $whatsapp;
+      i {
+        color: white;
+      }
+    }
+
+    &.whatsapp-invert {
+      background-color: white;
+
+      i {
+        color: $whatsapp;
+      }
+    }
+
+
+    &.tumblr {
+      background-color: $tumblr;
+      i {
+        color: white;
+      }
+    }
+
+    &.tumblr-invert {
+      background-color: white;
+
+      i {
+        color: $tumblr;
+      }
+    }
+
+
+    &.instagram {
+      background-color: $instagram;
+      i {
+        color: white;
+      }
+    }
+
+    &.instagram-invert {
+      background-color: white;
+
+      i {
+        color: $instagram;
+      }
+    }
+
+
+    &.flickr {
+      background-color: $flickr;
+      i {
+        color: white;
+      }
+    }
+
+    &.flickr-invert {
+      background-color: white;
+
+      i {
+        color: $flickr;
+      }
+    }
+
+
+    &.soundcloud {
+      background-color: $soundcloud;
+      i {
+        color: white;
+      }
+    }
+
+    &.soundcloud-invert {
+      background-color: white;
+
+      i {
+        color: $soundcloud;
+      }
+    }
 
 
 

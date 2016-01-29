@@ -31,9 +31,6 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1; }
 
-ol, ul {
-  list-style: none; }
-
 blockquote, q {
   quotes: none; }
 
@@ -81,6 +78,86 @@ table {
       background-color: white; }
       .cal-social span.twitter-invert i {
         color: #00aced; }
+    .cal-social span.google-plus {
+      background-color: #dd4b39; }
+      .cal-social span.google-plus i {
+        color: white; }
+    .cal-social span.google-plus-invert {
+      background-color: white; }
+      .cal-social span.google-plus-invert i {
+        color: #dd4b39; }
+    .cal-social span.pinterest {
+      background-color: #cb2027; }
+      .cal-social span.pinterest i {
+        color: white; }
+    .cal-social span.pinterest-invert {
+      background-color: white; }
+      .cal-social span.pinterest-invert i {
+        color: #cb2027; }
+    .cal-social span.linkedin {
+      background-color: #007bb6; }
+      .cal-social span.linkedin i {
+        color: white; }
+    .cal-social span.linkedin-invert {
+      background-color: white; }
+      .cal-social span.linkedin-invert i {
+        color: #007bb6; }
+    .cal-social span.youtube {
+      background-color: #bb0000; }
+      .cal-social span.youtube i {
+        color: white; }
+    .cal-social span.youtube-invert {
+      background-color: white; }
+      .cal-social span.youtube-invert i {
+        color: #bb0000; }
+    .cal-social span.vimeo {
+      background-color: #aad450; }
+      .cal-social span.vimeo i {
+        color: white; }
+    .cal-social span.vimeo-invert {
+      background-color: white; }
+      .cal-social span.vimeo-invert i {
+        color: #aad450; }
+    .cal-social span.whatsapp {
+      background-color: #4dc247; }
+      .cal-social span.whatsapp i {
+        color: white; }
+    .cal-social span.whatsapp-invert {
+      background-color: white; }
+      .cal-social span.whatsapp-invert i {
+        color: #4dc247; }
+    .cal-social span.tumblr {
+      background-color: #32506d; }
+      .cal-social span.tumblr i {
+        color: white; }
+    .cal-social span.tumblr-invert {
+      background-color: white; }
+      .cal-social span.tumblr-invert i {
+        color: #32506d; }
+    .cal-social span.instagram {
+      background-color: #517fa4; }
+      .cal-social span.instagram i {
+        color: white; }
+    .cal-social span.instagram-invert {
+      background-color: white; }
+      .cal-social span.instagram-invert i {
+        color: #517fa4; }
+    .cal-social span.flickr {
+      background-color: #ff0084; }
+      .cal-social span.flickr i {
+        color: white; }
+    .cal-social span.flickr-invert {
+      background-color: white; }
+      .cal-social span.flickr-invert i {
+        color: #ff0084; }
+    .cal-social span.soundcloud {
+      background-color: #ff3a00; }
+      .cal-social span.soundcloud i {
+        color: white; }
+    .cal-social span.soundcloud-invert {
+      background-color: white; }
+      .cal-social span.soundcloud-invert i {
+        color: #ff3a00; }
 
 body {
   background-color: #e3e3e3;
@@ -106,7 +183,7 @@ h3 {
 section > h3 {
   margin: 0; }
 
-h3 + p {
+h3 + p, p + h3 {
   margin-top: 20px; }
 
 p + p {
@@ -149,12 +226,47 @@ p.good {
     content: "\f00c";
     left: -26px; }
 
+p.cols {
+  -webkit-column-count: 3;
+  /* Chrome, Safari, Opera */
+  -moz-column-count: 3;
+  /* Firefox */
+  column-count: 3;
+  text-align: center; }
+
+ol {
+  margin-left: 30px; }
+  ol li ol {
+    list-style-type: lower-latin; }
+
 span.code {
   font-family: monospace; }
   span.code.facebook {
     color: #3b5998; }
-    span.code.facebook i {
-      margin-right: 4px; }
+  span.code.twitter {
+    color: #00aced; }
+  span.code.google-plus {
+    color: #dd4b39; }
+  span.code.pinterest {
+    color: #cb2027; }
+  span.code.linkedin {
+    color: #007bb6; }
+  span.code.youtube {
+    color: #bb0000; }
+  span.code.vimeo {
+    color: #aad450; }
+  span.code.whatsapp {
+    color: #4dc247; }
+  span.code.tumblr {
+    color: #32506d; }
+  span.code.instagram {
+    color: #517fa4; }
+  span.code.flickr {
+    color: #ff0084; }
+  span.code.soundcloud {
+    color: #ff3a00; }
+  span.code i {
+    margin-right: 4px; }
 
 section {
   margin-top: 50px;
@@ -177,18 +289,18 @@ section {
     padding: 20px; }
   .example .code-snippet {
     float: left;
-    width: 510px;
-    padding: 10px 20px;
+    width: 600px;
+    padding: 0 20px;
     font-family: monospace;
     font-size: 12px;
     color: grey; }
     .example .code-snippet.longer {
-      width: 650px; }
+      width: 740px; }
     .example .code-snippet p {
-      white-space: pre; }
+      white-space: pre-wrap; }
 
 .container {
-  width: 760px;
+  width: 850px;
   margin: 40px auto;
   padding: 20px;
   background: white;
