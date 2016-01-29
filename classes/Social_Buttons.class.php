@@ -85,13 +85,28 @@ class Social_Buttons {
 
         if($network == 'facebook' && $link == 'custom-share'){
             $link = '#';
-            $link_action = ' custom-share';
+            $link_action = ' custom-share facebook';
             $data_params .= ' data-title="' . $args['title'] . '"';
             $data_params .= ' data-caption="' . $args['caption'] . '"';
             $data_params .= ' data-description="' . $args['description'] . '"';
             $data_params .= ' data-url="' . $args['url'] . '"';
             $data_params .= ' data-image="' . $args['image_url'] . '"';
 
+
+        }
+        if($network == 'twitter' && $link == 'custom-share'){
+            $link = 'https://twitter.com/intent/tweet?';
+
+            $target .= 'target="_blank"';
+            $link_action = ' custom-share twitter';
+
+            $link .= 'text=' . urlencode($args['tweet']) . '&';
+            $link .= 'hashtags=' . urlencode($args['hashtag']) . '&';
+            $link .= 'via=' . urlencode($args['via']) . '&';
+            $link .= 'related=' . urlencode($args['related']) . '&';
+            $link .= 'url=' . urlencode($args['url']) . '&';
+
+            $link = substr($link, 0, -1);
 
         }
 

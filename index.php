@@ -63,7 +63,8 @@ $networks = array('facebook','twitter','google-plus','pinterest','linkedin','you
 				<ol>
 					<li><a href="#networks">Networks</a></li>
 					<li><a href="#button-styles">Button Styles</a></li>
-					<li><a href="#link-types">Link Types</a></li>
+					<li><a href="#facebook-variations">Facebook Variations</a></li>
+					<li><a href="#twitter-variations">Twitter Variations</a></li>
 					<li><a href="#new-window">Open in New Window</a></li>
 					<li><a href="#data-attributes">Data Attributes</a></li>
 				</ol>
@@ -483,13 +484,13 @@ Social_Buttons::build($args);</pre>
 			</article>
 
 
-			<a name="link-types"></a>
-			<article class="link-types">
+			<a name="facebook-variations"></a>
+			<article class="facebook-variations">
 
 
-				<h3>Facebook Button Options</h3>
+				<h3>Facebook Variations</h3>
 
-				<p>There are a couple of options for Facebook. The first option is a standard link to out to a Facebook page</p>
+				<p>There are a few of options for Facebook. The first option is a standard link to out to a Facebook page</p>
 
 				<div class="example">
 
@@ -622,6 +623,121 @@ Social_Buttons::build($args);</code></pre>
 			</article>
 
 
+			<a name="twitter-variations"></a>
+			<article class="twitter-variations">
+
+
+				<h3>Twitter Variations</h3>
+
+				<p>There are a couple of options for Twitter. The first option is a standard link to out and the second option will pre-populate a tweet.</p>
+
+				<div class="example">
+
+					<div class="light-bg">
+
+						<?
+						$args = array('network' => 'twitter',
+						              'link' => 'http://www.twitter.com/caliberi');
+
+						Social_Buttons::build($args); ?>
+
+					</div>
+
+					<div class="code-snippet longer">
+
+<pre><code>$args = array(
+	'network' => 'twitter',
+	'link' => 'http://www.twitter.com/caliberi'
+);
+Social_Buttons::build($args);</code></pre>
+
+					</div>
+
+					<div class="clearfix"></div>
+
+				</div>
+				<br>
+
+
+				<p>To fully populate the Twitter share and functionality you can use one or all of the additional elements shown on the next example. As a minimum you should populate the tweet and the url.</p>
+
+				<div class="example">
+
+					<div class="light-bg">
+
+						<?
+						$args = array('network' => 'twitter',
+						              'link' => 'custom-share',
+							          'tweet' => 'This is some tweet content',
+						              'url' => 'http://www.caliberi.com',
+						              'hashtag' => 'tweets',
+									  'via' => 'caliberi',
+									  'related' => 'shanejones');
+
+						Social_Buttons::build($args); ?>
+
+					</div>
+
+					<div class="code-snippet longer">
+
+<pre><code>$args = array(
+	'network' => 'twitter',
+	'link' => 'custom-share',
+	'tweet' => 'This is some tweet content',
+	'url' => 'http://www.caliberi.com',
+	'hashtag' => 'tweets',
+	'via' => 'caliberi',
+	'related' => 'shanejones'
+);
+Social_Buttons::build($args);</code></pre>
+
+					</div>
+
+					<div class="clearfix"></div>
+
+				</div>
+
+			</article>
+
+
+			<a name="new-window"></a>
+			<article class="new-window">
+
+				<h3>Opening a link in a new window</h3>
+
+				<p>If you are using the 'link' item, you can force it to open in a new window by adding the add the below</p>
+
+				<div class="example">
+
+				<div class="light-bg">
+
+					<?
+					$args = array('network' => 'facebook',
+					              'link' => 'http://www.facebook.com/caliberi',
+					              'new-window' => true);
+
+					Social_Buttons::build($args); ?>
+
+				</div>
+
+				<div class="code-snippet longer">
+
+<pre><code>$args = array(
+	'network' => 'facebook',
+	'link' => 'http://www.facebook.com/caliberi',
+	'new-window' => true
+);
+Social_Buttons::build($args);</code></pre>
+
+				</div>
+
+				<div class="clearfix"></div>
+
+			</div>
+
+			</article>
+
+
 			<a name="data-attributes"></a>
 			<article class="data-attributes">
 
@@ -691,6 +807,7 @@ Social_Buttons::build($args);</code></pre>
 
 
 			</article>
+
 		</section>
 
 		<a name="version-control"></a>

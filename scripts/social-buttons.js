@@ -1,4 +1,4 @@
-$('.cal-social.custom-share').click(function(e){
+$('.cal-social.custom-share.facebook').click(function(e){
     e.preventDefault();
     FB.ui({
         method: 'feed',
