@@ -91,8 +91,6 @@ class Social_Buttons {
             $data_params .= ' data-description="' . $args['description'] . '"';
             $data_params .= ' data-url="' . $args['url'] . '"';
             $data_params .= ' data-image="' . $args['image_url'] . '"';
-
-
         }
         if($network == 'twitter' && $link == 'custom-share'){
             $link = 'https://twitter.com/intent/tweet?';
@@ -104,11 +102,26 @@ class Social_Buttons {
             $link .= 'hashtags=' . urlencode($args['hashtag']) . '&';
             $link .= 'via=' . urlencode($args['via']) . '&';
             $link .= 'related=' . urlencode($args['related']) . '&';
-            $link .= 'url=' . urlencode($args['url']) . '&';
+            $link .= 'url=' . urlencode($args['url']);
 
-            $link = substr($link, 0, -1);
+            //$link = substr($link, 0, -1);
 
         }
+
+        if($network == 'pinterest' && $link == 'custom-share'){
+            // https://www.pinterest.com/pin/create/button/?url=[THE_URL]&media=[THE_IMAGE_URL]&description=THE_DESCRIPTION
+            $link = 'https://www.pinterest.com/pin/create/button/?';
+
+            $target .= 'target="_blank"';
+            $link_action = ' custom-share pinterest';
+
+            $link .= 'url=' . urlencode($args['url']) . '&';
+            $link .= 'media=' . urlencode($args['media']) . '&';
+            $link .= 'description=' . urlencode($args['title']);
+
+            //$link = substr($link, 0, -1);
+        }
+
 
         ?>
         <a class="cal-social<?=$link_action?>" href="<?=$link?>" <?=$target?> <?=$share_url?> <?=$data_params?>>

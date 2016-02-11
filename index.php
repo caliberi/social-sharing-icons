@@ -65,6 +65,7 @@ $networks = array('facebook','twitter','google-plus','pinterest','linkedin','you
 					<li><a href="#button-styles">Button Styles</a></li>
 					<li><a href="#facebook-variations">Facebook Variations</a></li>
 					<li><a href="#twitter-variations">Twitter Variations</a></li>
+					<li><a href="#pinterest-variations">Pinterest Variations</a></li>
 					<li><a href="#new-window">Open in New Window</a></li>
 					<li><a href="#data-attributes">Data Attributes</a></li>
 				</ol>
@@ -688,6 +689,52 @@ Social_Buttons::build($args);</code></pre>
 	'hashtag' => 'tweets',
 	'via' => 'caliberi',
 	'related' => 'shanejones'
+);
+Social_Buttons::build($args);</code></pre>
+
+					</div>
+
+					<div class="clearfix"></div>
+
+				</div>
+
+			</article>
+
+
+
+
+
+			<a name="pinterest-variations"></a>
+			<article class="pinterest-variations">
+
+
+				<h3>Pinterest Variations</h3>
+
+				<p>We can also create an Pinterest button to pin an image to pinterest. </p>
+
+				<div class="example">
+
+					<div class="light-bg">
+
+						<?
+						$args = array('network' => 'pinterest',
+						              'link' => 'custom-share',
+							          'title' => 'Caliber homepage image',
+						              'url' => 'http://www.caliberi.com',
+						              'media' => 'http://www.northwoodregional.co.uk/uploaded-files/property/46/images/459/front-back-large.jpg');
+
+						Social_Buttons::build($args); ?>
+
+					</div>
+
+					<div class="code-snippet longer">
+
+<pre><code>$args = array(
+	'network' => 'pinterest',
+	'link' => 'custom-share',
+	'title' => 'Caliber homepage image',
+	'url' => 'http://www.caliberi.com',
+	'media' => 'http://www.northwoodregional.co.uk/uploaded-files/property/46/images/459/front-back-large.jpg'
 );
 Social_Buttons::build($args);</code></pre>
 
