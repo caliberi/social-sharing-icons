@@ -10,7 +10,7 @@ $networks = array('facebook','twitter','google-plus','pinterest','linkedin','you
     <head>
         <meta charset="utf-8">
 
-        <title></title>
+        <title>Caliber Social Sharing icons</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/main.css">
@@ -22,26 +22,6 @@ $networks = array('facebook','twitter','google-plus','pinterest','linkedin','you
 
 
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-	    <meta property="fb:app_id" content="" />
-
-	    <meta property="og:title" content="" />
-	    <meta property="og:type" content="website" />
-	    <meta property="og:url" content="" />
-	    <meta property="og:image" content="" />
-	    <meta property="og:description" content="" />
-
-
-	    <meta name="twitter:card" content="summary_large_image">
-	    <meta name="twitter:site" content="">
-	    <meta name="twitter:creator" content="">
-	    <meta name="twitter:title" content="" />
-	    <meta name="twitter:description" content="">
-	    <meta name="twitter:image:src" content="">
-
-	    <meta itemprop="name" content="" />
-	    <meta itemprop="description" content="">
-	    <meta itemprop="image" content="">
 
 	    <? // ---> ?>
 
@@ -83,11 +63,11 @@ $networks = array('facebook','twitter','google-plus','pinterest','linkedin','you
 
 			<p>Secondly, make sure you include FontAwesome in your project. <a href="https://fortawesome.github.io/Font-Awesome/get-started/">Install here</a></p>
 
-			<h3>Required files from this project</h3>
-			<p><span class="code">/classes/Social_Buttons.class.php</span> - Add that to your project and link it in.</p>
-			<p><span class="code">css/_parts/_social-colours.scss</span> - Add this to your SASS partials folder and <span class="code">@import</span> the link to the file</p>
-			<p><span class="code">css/_parts/_social-icons.scss</span> - Add this to your SASS partials folder and <span class="code">@import</span> the link to the file</p>
-			<p><span class="code">scripts/social-icons.js</span> - Add this to your JavaScript folder and include on any pages that the buttons are being included on</p>
+			<h3>Required files from this projects source </h3>
+			<p><span class="code">/social/Social_Buttons.class.php</span> - Add that to your project and link it in.</p>
+			<p><span class="code">/social/scss/_social-colours.scss</span> - Add this to your SASS partials folder and <span class="code">@import</span> the link to the file</p>
+			<p><span class="code">/social/scss/_social-icons.scss</span> - Add this to your SASS partials folder and <span class="code">@import</span> the link to the file</p>
+			<p><span class="code">/social/social-icons.js</span> - Add this to your JavaScript folder and include on any pages that the buttons are being included on</p>
 		</section>
 
 
