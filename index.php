@@ -1,7 +1,7 @@
 <?
 require_once 'social/Social_Buttons.class.php';
 
-define ('FB_APP_ID', '');
+define ('FB_APP_ID', '1696684157209942');
 
 $networks = array('facebook','twitter','google-plus','pinterest','linkedin','youtube','vimeo','whatsapp','tumblr','instagram','flickr','soundcloud');
 
@@ -60,6 +60,11 @@ $networks = array('facebook','twitter','google-plus','pinterest','linkedin','you
 
 		<section class="usage">
 		<h2>Usage in your app</h2><a name="usage"></a>
+
+			<p>Just run <strong>bower install caliber-sharing-icons</strong></p>
+
+
+
 
 			<p>Firstly this requires you to be using SASS in your apps. The SCSS files are to be added as partials to your main scss file</p>
 
