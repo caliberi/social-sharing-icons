@@ -1,4 +1,5 @@
-<? include 'init.php';
+<?
+require_once 'social/Social_Buttons.class.php';
 
 $networks = array('facebook','twitter','google-plus','pinterest','linkedin','youtube','vimeo','whatsapp','tumblr','instagram','flickr','soundcloud');
 
@@ -66,6 +67,7 @@ $networks = array('facebook','twitter','google-plus','pinterest','linkedin','you
 					<li><a href="#facebook-variations">Facebook Variations</a></li>
 					<li><a href="#twitter-variations">Twitter Variations</a></li>
 					<li><a href="#pinterest-variations">Pinterest Variations</a></li>
+					<li><a href="#pinterest-variations">LinkedIn Variations</a></li>
 					<li><a href="#new-window">Open in New Window</a></li>
 					<li><a href="#data-attributes">Data Attributes</a></li>
 				</ol>
@@ -82,7 +84,7 @@ $networks = array('facebook','twitter','google-plus','pinterest','linkedin','you
 			<p>Secondly, make sure you include FontAwesome in your project. <a href="https://fortawesome.github.io/Font-Awesome/get-started/">Install here</a></p>
 
 			<h3>Required files from this project</h3>
-			<p><span class="code">/classes/Social_Buttons.class.php</span> - also remember to require it in your project.</p>
+			<p><span class="code">/classes/Social_Buttons.class.php</span> - Add that to your project and link it in.</p>
 			<p><span class="code">css/_parts/_social-colours.scss</span> - Add this to your SASS partials folder and <span class="code">@import</span> the link to the file</p>
 			<p><span class="code">css/_parts/_social-icons.scss</span> - Add this to your SASS partials folder and <span class="code">@import</span> the link to the file</p>
 			<p><span class="code">scripts/social-icons.js</span> - Add this to your JavaScript folder and include on any pages that the buttons are being included on</p>
@@ -184,9 +186,9 @@ Social_Buttons::build($args);</code></pre>
 			<article class="button-styles">
 
 				<h3>Button styles</h3>
-				<p>Default styling of the button is square.</p>
 
 				<div class="example">
+				<p>Default styling of the button is square.</p>
 
 					<div class="white-bg">
 
@@ -230,6 +232,7 @@ Social_Buttons::build();</code></pre>
 				</div>
 
 				<div class="example">
+				<p>Rounded buttons</p>
 
 					<div class="white-bg">
 
@@ -279,6 +282,7 @@ Social_Buttons::build($args);</code></pre>
 				</div>
 
 				<div class="example">
+				<p>Round buttons.</p>
 
 					<div class="white-bg">
 
@@ -328,6 +332,7 @@ Social_Buttons::build($args);</code></pre>
 				</div>
 
 				<div class="example">
+				<p>Inverted square.</p>
 
 					<div class="white-bg">
 
@@ -377,6 +382,7 @@ Social_Buttons::build($args);</code></pre>
 				</div>
 
 				<div class="example">
+				<p>Inverted rounded.</p>
 
 					<div class="white-bg">
 
@@ -429,7 +435,9 @@ Social_Buttons::build($args);</code></pre>
 
 				</div>
 
+
 				<div class="example">
+				<p>Inverted round.</p>
 
 				<div class="white-bg">
 
@@ -747,6 +755,52 @@ Social_Buttons::build($args);</code></pre>
 			</article>
 
 
+
+			<a name="pinterest-variations"></a>
+			<article class="pinterest-variations">
+
+
+				<h3>LinkedIn Variations</h3>
+
+				<p>We can also create an LinkedIn share widget. This uses an Open Graph image tag to populate the image. If the image does not populate you may need to add <strong>prefix="og: http://ogp.me/ns#"</strong> to the Facebook open graph tags in your header. </p>
+
+				<div class="example">
+
+					<div class="light-bg">
+
+						<?
+						$args = array('network' => 'linkedin',
+						              'link' => 'custom-share',
+						              'company' => 'Caliber Interactive',
+						              'title' => 'Caliber Website',
+						              'description' => 'This is the caliber homepage description',
+						              'url' => 'http://www.caliberi.com');
+
+						Social_Buttons::build($args); ?>
+
+					</div>
+
+					<div class="code-snippet longer">
+
+<pre><code>$args = array(
+	'network' => 'linkedin',
+	'link' => 'custom-share',
+	'company' => 'Caliber Interactive',
+	'title' => 'Caliber Website',
+	'description' => 'This is the caliber homepage description',
+	'url' => 'http://www.caliberi.com'
+);
+Social_Buttons::build($args);</code></pre>
+
+					</div>
+
+					<div class="clearfix"></div>
+
+				</div>
+
+			</article>
+
+
 			<a name="new-window"></a>
 			<article class="new-window">
 
@@ -876,6 +930,6 @@ Social_Buttons::build($args);</code></pre>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
     <script src="scripts/main.js"></script>
-    <script src="scripts/social-buttons.js"></script>
+    <script src="social/social-buttons.js"></script>
     </body>
 </html>

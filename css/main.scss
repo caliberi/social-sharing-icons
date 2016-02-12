@@ -1,17 +1,16 @@
-@import '_parts/reset';
+@import 'parts/reset';
 
 
 
-// social scss parts are below
+// social scss
 
-@import '_parts/social-colours';
-@import '_parts/social-icons';
+@import '../social/scss/social-colours';
+@import '../social/scss/social-icons';
 
 // -->
 
 
 
 
-
 //demo styles for this example you do not need to include this in your app
-@import '_parts/demo';
+@import 'parts/demo';
