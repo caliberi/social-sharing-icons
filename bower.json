@@ -1,0 +1,20 @@
+{
+  "name": "caliber-sharing-icons",
+  "authors": [
+    "Shane Jones <shane.jones@caliberi.com>"
+  ],
+  "description": "A quick way to add social sharing icons with varying functionality to a page.",
+  "main": [
+    "social/Social_Buttons.class.php",
+    "social/social-buttons.php",
+    "social/scss/_social-colours.scss",
+    "social/scss/_social-icons.scss"
+  ],
+  "keywords": [
+    "social media",
+    "social"
+  ],
+  "license": "GNU GPL v3.0",
+  "homepage": "http://kitchen.caliberi.com/demo/social-sharing-icons/",
+  "private": true
+}

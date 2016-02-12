@@ -1,6 +1,8 @@
 <?
 require_once 'social/Social_Buttons.class.php';
 
+define ('FB_APP_ID', '');
+
 $networks = array('facebook','twitter','google-plus','pinterest','linkedin','youtube','vimeo','whatsapp','tumblr','instagram','flickr','soundcloud');
 
 ?>
